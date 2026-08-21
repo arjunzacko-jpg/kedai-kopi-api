@@ -5,6 +5,18 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 
 // =========================================================
+// TEST RAILWAY
+// =========================================================
+
+Route::get('/railway-test-123', function () {
+    return response()->json([
+        'message' => 'KODE TERBARU SUDAH MASUK RAILWAY',
+        'commit' => '4aae143',
+    ]);
+});
+
+
+// =========================================================
 // DEBUG DATABASE / SEEDER
 // =========================================================
 
