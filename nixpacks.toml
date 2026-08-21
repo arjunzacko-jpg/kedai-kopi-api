@@ -5,10 +5,8 @@ nixPkgs = ["php82", "php82Extensions.pdo_pgsql", "nodejs_20"]
 cmds = [
     "composer install --no-dev --optimize-autoloader",
     "php artisan key:generate --force",
-    "php artisan migrate:fresh --seed --force",
+    "php artisan migrate --seed --force",
     "php artisan optimize:clear",
-    "php artisan route:clear",
-    "php artisan route:list --path=api",
     "npm install",
     "npm run build"
 ]
