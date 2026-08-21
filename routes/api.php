@@ -4,41 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 
-
-// =========================================================
-// TEST RAILWAY
-// =========================================================
-
-Route::get('/railway-test-123', function () {
+Route::get('/test', function () {
     return response()->json([
-        'message' => 'KODE TERBARU SUDAH MASUK RAILWAY',
+        'message' => 'API Laravel Railway berhasil',
+        'status' => 'OK',
     ]);
 });
 
-
-// =========================================================
-// TEST ROUTE
-// =========================================================
-
-Route::get('/route-test-456', function () {
-    return response()->json([
-        'message' => 'ROUTE TEST BERHASIL',
-    ]);
-});
-
-
-// =========================================================
-// TEST DATABASE
-// =========================================================
-
-Route::get('/database-test-123', function () {
+Route::get('/database-test', function () {
     try {
-        $count = \App\Models\Product::count();
-
         return response()->json([
             'status' => 'database connected',
             'database' => config('database.default'),
-            'product_count' => $count,
+            'product_count' => \App\Models\Product::count(),
         ]);
     } catch (\Throwable $e) {
         return response()->json([
@@ -47,11 +25,6 @@ Route::get('/database-test-123', function () {
         ], 500);
     }
 });
-
-
-// =========================================================
-// PRODUCTS
-// =========================================================
 
 Route::get('/products', [
     ProductController::class,
@@ -62,11 +35,6 @@ Route::post('/products', [
     ProductController::class,
     'store'
 ]);
-
-
-// =========================================================
-// TRANSACTIONS
-// =========================================================
 
 Route::get('/transactions', [
     TransactionController::class,
