@@ -19,6 +19,11 @@ Route::post('/products', [
     'store'
 ]);
 
+Route::get('/debug-database', [
+    ProductController::class,
+    'debugDatabase'
+]);
+
 
 // =========================================================
 // TRANSACTIONS
