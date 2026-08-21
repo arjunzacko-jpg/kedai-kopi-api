@@ -38,6 +38,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "@php artisan migrate --seed --force",
+            "@php artisan route:list --path=api",
             "npm install",
             "npm run build"
         ],
