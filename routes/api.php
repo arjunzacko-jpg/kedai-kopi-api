@@ -14,14 +14,14 @@ Route::get('/products', [
     'index'
 ]);
 
-Route::post('/products', [
-    ProductController::class,
-    'store'
-]);
-
 Route::get('/debug-database', [
     ProductController::class,
     'debugDatabase'
+]);
+
+Route::post('/products', [
+    ProductController::class,
+    'store'
 ]);
 
 
